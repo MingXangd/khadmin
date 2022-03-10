@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>pdf</title>
+		<link rel="stylesheet" href="../css/stylepdf.css" />
+		<link rel="stylesheet" href="../css/pdfh5.css" />
+		<style>
+			.pdfjs {width: 100%;height: 100%;overflow: hidden;background: #fff;position: relative;}
+			.pdfjs .pdfViewer{padding:unset;}
+		</style>
+		<script src="../js/pdf.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/pdf.worker.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/pdfh5.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="pdfjs"></div>
+		<script type="text/javascript">
+
+			var str = window.location.search.substr(1).split('url=')[1]
+			// var str = '?token=bbf0a0b4-9ec3-4135-a1ac-0b6bf7db3bc5&m=1644310272000&bankidList=0,1,2,3,4,5,6,7,8,9'.substr(1).split('url=')[1]
+			
+			console.log(str)
+			// var url = decodeURI(str);
+			// console.log(url)
+			var pdfh5 = new Pdfh5('.pdfjs',{
+				pdfurl: str
+			});
+
+		</script>
+	</body>
+</html>
